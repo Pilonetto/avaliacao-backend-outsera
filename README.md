@@ -1,4 +1,4 @@
-# 🏆 Golden Raspberry Awards API
+# 🏆 Golden Raspberry Awards API (outsera)
 
 API RESTful para leitura e análise da categoria **Pior Filme** do Golden Raspberry Awards, com base em um arquivo CSV de filmes vencedores.
 
@@ -50,19 +50,21 @@ A API permite consultar os produtores com:
 ### 1. Clone o repositório e acesse a pasta:
 
 ```bash
-git clone https://github.com/seu-usuario/seu-repo.git
-cd seu-repo
+git clone https://github.com/Pilonetto/avaliacao-backend-outsera.git
+cd avaliacao-backend-outsera
 ```
 
 ### 2. Crie e ative um ambiente virtual:
 
 #### Linux/macOS:
+
 ```bash
 python -m venv .venv
 source .venv/bin/activate
 ```
 
 #### Windows (PowerShell):
+
 ```powershell
 python -m venv .venv
 .venv\Scripts\Activate.ps1
@@ -97,6 +99,7 @@ http://localhost:8000/docs
 Os testes são de integração e verificam se a API responde corretamente.
 
 ### ⚠️ Passo único:
+
 ```bash
 pytest
 ```
