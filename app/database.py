@@ -30,10 +30,8 @@ def load_data_from_csv(filepath: str):
                 producers=row["producers"],
                 winner=row["winner"].strip().lower() == "yes"
             )
-            print(row["title"])
             movies.append(movie)
 
         with Session(engine) as session:
             session.add_all(movies)
             session.commit()
-            print("commit")
