@@ -1,16 +1,18 @@
 from sqlmodel import SQLModel, Session, create_engine
+from sqlalchemy.pool import StaticPool
 from app.models import Movie
 import csv
 import os
 
-DATABASE_URL = "sqlite:///./database.db"
-engine = create_engine(DATABASE_URL, echo=False)
+engine = create_engine(
+    "sqlite://",
+    echo=False,
+    connect_args={"check_same_thread": False},
+    poolclass=StaticPool
+)
 
 
 def create_db_and_tables():
-    # deleta o banco para não duplicar os dados durante os testes
-    if os.path.exists("database.db"):
-        os.remove("database.db")
     SQLModel.metadata.create_all(engine)
 
 
